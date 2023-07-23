@@ -5,6 +5,6 @@
 `npm run build` to build
 
 ### How do I use this?
-**[App.jsx](/src/App.jsx)**
-- Change line 10 `birthdayPerson` is the name of the person you'd like to surprise
-- Change line 15 `finnish` to `true` if you want this birthday greeting to be in Finnish. (This updates all text including buttons) 
+See [.env.example](./.env.example)<br>
+`VITE_BIRTHDAY_PERSON` Change value to desired name<br>
+`VITE_FINNISH` If true, app will be in Finnish
