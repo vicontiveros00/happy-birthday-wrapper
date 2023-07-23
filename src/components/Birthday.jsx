@@ -4,7 +4,7 @@ import JSConfetti from 'js-confetti';
 import 'animate.css';
 import './Birthday.css'
 
-const Birthday = ({ cat, birthdayPerson, handleClick, finnish }) => {
+const Birthday = ({ cat, birthdayPerson, handleClick, useFinnish }) => {
     //const { birthdayPerson, handleClick, cat } = props;
     const confetti = new JSConfetti();
     const [cake, setCake] = useState(false);
@@ -30,17 +30,17 @@ const Birthday = ({ cat, birthdayPerson, handleClick, finnish }) => {
     return (
         <>
             <p className="animate__animated animate__slow animate__tada">
-                {`${finnish ? 'Hyvää syntymäpäivää ' : 'Happy Birthday '} ${birthdayPerson}!`}
+                {`${useFinnish ? 'Hyvää syntymäpäivää ' : 'Happy Birthday '} ${birthdayPerson}!`}
             </p>
             <img src={cat} /><br />
-            {cake && <p className="animate__animated animate__fadeInUp cake">🎂 ← {finnish ? 'Kakku sinulle' : 'Cake for you'}</p>}
+            {cake && <p className="animate__animated animate__fadeInUp cake">🎂 ← {useFinnish ? 'Kakku sinulle' : 'Cake for you'}</p>}
             {displayResetButton && <button className="animate__animated animate__fadeInUp reset" onClick={() => {
                 resetStates();
                 handleClick();
             }} style={{
                 marginTop: '1rem'
             }}>
-                {finnish ? 'Uudestaan' : 'Reset'}    
+                {useFinnish ? 'Uudestaan' : 'Reset'}    
             </button>}
         </>
     )
